@@ -32,33 +32,70 @@ public class Main {
         startA = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             arrayList.add(i, random.nextInt(100));
-            arrayList.add((int) arrayList.size()/2, random.nextInt(100));
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for inserting data on the beginning:"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            arrayList.add((int)arrayList.size()/2+i, random.nextInt(100));
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for inserting data on the middle:"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
             arrayList.add(random.nextInt(100));
         }
         finishA = LocalDateTime.now();
-        System.out.println("ArrayList" + "Time for inserting data on the beginning, middle, end:"
+        System.out.println("ArrayList" + "Time for inserting data on the end:"
                 + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
 
-        // updating from the beginning, middle, end
+        // updating on the beginning, middle, end
         startA = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             arrayList.set(i, random.nextInt(100));
-            arrayList.set((int) arrayList.size()/2+i, random.nextInt(100));
-            arrayList.set(arrayList.size()-1-i, random.nextInt(100));
         }
         finishA = LocalDateTime.now();
-        System.out.println("ArrayList" + "Time for updating data from the beginning, middle, end:"
+        System.out.println("ArrayList" + "Time for updating data on the beginning"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            arrayList.set((int)arrayList.size()/2+i, random.nextInt(100));
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for updating data on the middle:"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            arrayList.set((int) arrayList.size()-1-i, random.nextInt(100));
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for updating data on the end:"
                 + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
 
         // deleting from the beginning, middle, end
         startA = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             arrayList.remove(i);
-            arrayList.remove((int) arrayList.size()/2+i);
-            arrayList.remove(arrayList.size()-1-i);
         }
         finishA = LocalDateTime.now();
-        System.out.println("ArrayList" + "Time for deleting data from the beginning, middle, end:"
+        System.out.println("ArrayList" + "Time for deleting data on the beginning:"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            arrayList.remove((int)arrayList.size()/2+i);
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for deleting data on the middle:"
+                + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
+        startA = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            arrayList.remove((int)arrayList.size()-1-i);
+        }
+        finishA = LocalDateTime.now();
+        System.out.println("ArrayList" + "Time for deleting data on the end:"
                 + ChronoUnit.MILLIS.between(startA, finishA) + "ms");
 
         // linked list
@@ -77,33 +114,71 @@ public class Main {
         startL = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             linkedList.add(i, random.nextInt(100));
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for inserting data on the beginning:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
             linkedList.add((int)linkedList.size()/2+i, random.nextInt(100));
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for inserting data on the middle:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
             linkedList.add(random.nextInt(100));
         }
         finishL = LocalDateTime.now();
-        System.out.println("LinkedList" + "Time for inserting data on the beginning, middle, end:"
+        System.out.println("LinkedList" + "Time for inserting data on the end:"
                 + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
 
         // updating from the beginning, middle, end
         startL = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             linkedList.set(i, random.nextInt(100));
-            linkedList.set(linkedList.size()/2+i, random.nextInt(100));
-            linkedList.set(linkedList.size()-1-i, random.nextInt(100));
         }
         finishL = LocalDateTime.now();
-        System.out.println("LinkedList" + "Time for updating data from the beginning, middle, end:"
+        System.out.println("LinkedList" + "Time for updating data on the beginning:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            linkedList.set((int)linkedList.size()/2+i, random.nextInt(100));
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for updating data on the middle:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            linkedList.set((int) arrayList.size()-1-i, random.nextInt(100));
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for inserting data on the end:"
                 + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
 
         // deleting from the beginning, middle, end
         startL = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
             linkedList.remove(i);
-            linkedList.remove(linkedList.size()/2+i);
-            linkedList.remove(linkedList.size()-1-i);
         }
         finishL = LocalDateTime.now();
-        System.out.println("LinkedList" + "Time for deleting data from the beginning, middle, end:"
+        System.out.println("LinkedList" + "Time for deleting data on the beginning:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            linkedList.remove((int)linkedList.size()/2+i);
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for updating data on the middle:"
+                + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
+
+        startL = LocalDateTime.now();
+        for (int i = 0; i < 1000; i++) {
+            linkedList.remove((int) arrayList.size()-1-i);
+        }
+        finishL = LocalDateTime.now();
+        System.out.println("LinkedList" + "Time for inserting data on the end:"
                 + ChronoUnit.MILLIS.between(startL, finishL) + "ms");
     }
 }
